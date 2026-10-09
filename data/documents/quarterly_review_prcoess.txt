@@ -1,0 +1,33 @@
+Quarterly Business Review Process
+
+The quarterly review combines quantitative analysis with qualitative interpretation.
+
+Review sequence
+
+First, calculate total revenue and total units sold for the requested period.
+
+Second, compare performance by region and product.
+
+Third, review customer satisfaction and churn.
+
+Fourth, identify unusual results and determine which issues require management follow-up.
+
+Interpretation guidelines
+
+Every result should identify the reporting period, metric, and comparison group.
+
+Percentage changes should state the base period.
+
+High revenue does not necessarily indicate high customer satisfaction.
+
+Low customer satisfaction does not establish that a customer will churn.
+
+Escalation guidelines
+
+Escalate unusual results when a metric changes materially compared with a prior period, when a region or product differs substantially from the overall average, or when a customer has both a low satisfaction score and a churn date.
+
+Documentation expectations
+
+A review record should retain the question asked, reporting period, metrics used, comparison performed, and assumptions.
+
+All results from this dataset must be labeled as sample or demonstration results.

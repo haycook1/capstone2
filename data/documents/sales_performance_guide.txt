@@ -1,0 +1,35 @@
+Sales Performance and Customer Management Guide
+
+Purpose
+
+The sales performance program tracks revenue, units sold, regional performance, product performance, customer satisfaction, and customer churn. Revenue is recorded in U.S. dollars. Units sold represents the number of units recorded in each sales summary.
+
+Regional performance
+
+Regional reviews compare the Northeast, Southeast, Midwest, and West regions. Managers should review total revenue, total units sold, average revenue per unit, and product mix.
+
+A region with higher revenue may have more units sold, higher-value products, or both. Revenue should therefore be evaluated together with units sold rather than in isolation.
+
+Product performance
+
+Product comparisons should include total revenue, total units sold, and average revenue per unit. The three products in this demonstration dataset are Analytics Platform, Cloud Suite, and Security Package.
+
+Customer satisfaction
+
+Customer satisfaction scores range from 1.0 to 5.0. A score of 1.0 indicates very low satisfaction, while 5.0 indicates very high satisfaction.
+
+Customers with lower satisfaction scores should be reviewed by Customer Success. A low satisfaction score is a signal for investigation, not proof that the customer will churn.
+
+Customer churn
+
+A non-null churn date indicates that a customer churned in the sample data. A null churn date indicates that the customer is active in the sample data.
+
+The churn review should compare satisfaction scores for churned and active customers. Customer teams should prioritize customers who have both low satisfaction and a churn date.
+
+Employee context
+
+Employee satisfaction scores also range from 1.0 to 5.0. Employee information provides organizational context but should not be treated as proof that employee satisfaction caused a change in revenue or customer churn.
+
+Data limitations
+
+This is fictional demonstration data created for testing an enterprise RAG system. It does not represent actual customers, employees, financial results, or business decisions.
