@@ -6,6 +6,8 @@ A Python-based enterprise Retrieval-Augmented Generation system that routes user
 
 The system uses Gemini for language-model responses, ChromaDB for document retrieval, SQLite for quantitative analysis, and a validation layer to prevent unverified or unsafe responses from reaching the user.
 
+AI was utilized to aid in the creation of the system and documentation
+
 ## Features
 
 - Python 3.11 codebase with a virtual environment

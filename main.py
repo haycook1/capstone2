@@ -1,6 +1,8 @@
 # main.py
 from agents.manager import run
 
+
+# Main entry point for the Spoonful Enterprise RAG System.
 def main():
     print("Spoonful Enterprise RAG System")
     print("Type 'exit' to quit.\n")

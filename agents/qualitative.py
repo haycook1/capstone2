@@ -12,6 +12,8 @@ client = OpenAI(
     )
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
+# Qualitative agent function for retrieving and answering questions based on enterprise documentation.
+
 def retrieve(query: str, top_k: int = 5) -> list[dict]:
     chroma = chromadb.PersistentClient(path="./data/chroma")
     collection = chroma.get_collection("enterprise-docs")
@@ -25,6 +27,8 @@ def retrieve(query: str, top_k: int = 5) -> list[dict]:
         }
         for doc, meta in zip(results["documents"][0], results["metadatas"][0])
     ]
+
+# Function to build the prompt for the gemini model based on retrieved chunks.
 
 def build_prompt(query: str, chunks: list[dict]) -> str:
     context = ""
@@ -42,6 +46,8 @@ CONTEXT:
 QUESTION: {query}
 
 ANSWER:"""
+
+# Main runner function for the qualitative agent.
 
 def run(query: str) -> dict:
     chunks = retrieve(query)

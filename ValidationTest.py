@@ -2,7 +2,7 @@ import agents.quantitative as quantitative
 import sqlite3
 
 
-
+# Validation test for the quantitative agent using a fake retrieval function. SHOULD RETURN ERROR
 def fake_retrieve(query: str, top_k: int = 5) -> list[dict]:
     return [
         {

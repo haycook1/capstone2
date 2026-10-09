@@ -2,11 +2,12 @@ import json
 import os
 from datetime import datetime, timezone
 
+# Tokenomics logger for tracking API usage and costs.
 COST_PER_1K_INPUT = float(os.getenv("COST_PER_1K_INPUT", "0.003"))
 COST_PER_1K_OUTPUT = float(os.getenv("COST_PER_1K_OUTPUT", "0.015"))
 LOG_PATH = os.getenv("TOKENOMICS_LOG_PATH", "tokenomics_log.jsonl")
 
-
+# Function to log individual agent calls with token usage and cost.
 def log(
     query: str,
     agent: str,
@@ -49,7 +50,7 @@ def log(
 
     return entry
 
-
+# Function to log the total usage for a query, including route and outcome.
 def log_query_total(
     query: str,
     route: str,

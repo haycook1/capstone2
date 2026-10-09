@@ -3,6 +3,7 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 import os
 
+# Function to split a document into chunks for ingestion into the vector database.
 def chunk_document(text: str, chunk_size: int = 500, overlap: int = 50) -> list[str]:
     words = text.split()
     chunks = []
@@ -11,6 +12,8 @@ def chunk_document(text: str, chunk_size: int = 500, overlap: int = 50) -> list[
         chunks.append(chunk)
     return chunks
 
+
+# Function to ingest documents into the vector database.
 def ingest(docs_path: str):
     client = chromadb.PersistentClient(path="./data/chroma")
     collection = client.get_or_create_collection("enterprise-docs")

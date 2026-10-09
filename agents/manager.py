@@ -12,7 +12,7 @@ client = OpenAI(
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
 
-
+#Validation function to display if a given validation result indicates pass or fail.
 
 def validation_passed(validation: dict | str) -> bool:
     if isinstance(validation, dict):
@@ -31,7 +31,7 @@ def validation_passed(validation: dict | str) -> bool:
 
     return False
 
-
+# Safe answer function to return model output only when validation passes or warning when validation fails.
 
 def safe_answer(label: str, answer: str, validation: dict) -> str:
     """Return model output only when validation passes."""
@@ -45,7 +45,7 @@ def safe_answer(label: str, answer: str, validation: dict) -> str:
 
     return f"{label} response withheld: {warning}"
 
-
+# Classifier function to determine the type of query: qualitative, quantitative, or both.
 def classify(query: str) -> str:
     message = client.chat.completions.create(
         model="gemini-3.5-flash-lite",
@@ -77,6 +77,8 @@ Reply with one word only: qualitative, quantitative, or both."""
 
     return route if route in ["qualitative", "quantitative", "both"] else "qualitative"
 
+
+# Main runner function to handle the query classification and execution.
 
 def run(query: str):
     print(f"\nQuery: {query}")

@@ -9,6 +9,8 @@ load_dotenv()
 
 DB_PATH = "data/enterprise.db"
 
+#Initialization and rules for the quantitative agent.
+
 client = OpenAI(
     api_key=os.getenv("GEMINI_API_KEY"),
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
@@ -29,11 +31,11 @@ Metric rules:
 - Return exactly one read-only SELECT statement.
 """
 
-
+# Function to count usage tokens for the API response.
 def usage_tokens(usage, field: str) -> int:
     return int(getattr(usage, field, 0) or 0)
 
-
+# Function to validate SQL queries for safety and correctness.
 def validate_sql(query: str) -> dict:
     cleaned = query.strip()
 
@@ -72,7 +74,7 @@ def validate_sql(query: str) -> dict:
         "reason": "OK",
     }
 
-
+# Function to generate SQL queries based on user questions.
 def generate_sql(query: str) -> dict:
     message = client.chat.completions.create(
         model="gemini-3.5-flash-lite",
@@ -104,6 +106,7 @@ def generate_sql(query: str) -> dict:
         ),
     }
 
+# Function to normalize metric SQL queries for specific business logic.
 def normalize_metric_sql(question: str, sql: str) -> tuple[str, list[str]]:
     """
     Corrects the known AVG(revenue) mistake when the user asks
@@ -146,7 +149,7 @@ def normalize_metric_sql(question: str, sql: str) -> tuple[str, list[str]]:
 
     return sql, changes
 
-
+# Function to interpret the results of a SQL query in a business context.
 def interpret_results(
     query: str,
     sql: str,
@@ -190,7 +193,7 @@ def interpret_results(
         ),
     }
 
-
+# Main runner function for the quantitative agent.
 def run(query: str) -> dict:
     generated = generate_sql(query)
     sql = generated["sql"]

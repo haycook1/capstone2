@@ -4,6 +4,8 @@ from datetime import date, timedelta
 
 DB_PATH = "data/enterprise.db"
 
+
+# Function to seed the enterprise database with initial data.
 def seed_database():
     os.makedirs("data", exist_ok=True)
 

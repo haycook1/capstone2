@@ -1,4 +1,6 @@
 # smoke_test.py
+
+# Smoke test for the OpenAI API integration.
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
